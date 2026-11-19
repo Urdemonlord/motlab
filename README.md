@@ -178,7 +178,7 @@ Footage is decoded inside the page with Mediabunny, so a scene can cut and trim 
 
 <br>
 
-> Not tested properly yet. CI runs the tests, the end-to-end renders among them, on an Ubuntu runner, but no real video has been made on Linux, and nothing has run on macOS (the Chrome paths and the Metal flag are in the code). Everything else was built and measured on one Windows laptop.
+> A real video has now been made on Linux: a 42 s, 1080x1920 project on Ubuntu 24.04 with no GPU, rendered in about 82 s with the Chromium Playwright downloads (issue #8). CI runs the tests, the end-to-end renders among them, on an Ubuntu runner, but nothing has run on macOS (the Chrome paths and the Metal flag are in the code). Everything else was built and measured on one Windows laptop.
 
 </details>
 

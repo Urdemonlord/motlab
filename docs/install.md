@@ -7,7 +7,7 @@ motlab has two parts: the engine (the `motlab` command, the viewer and the rende
 | Tool | Why | Check |
 |---|---|---|
 | Node.js 24 or newer | runs the engine | `node --version` |
-| Google Chrome or Chromium | draws and encodes the frames | found on its default path, or set `CHROME` |
+| Google Chrome or Chromium | draws and encodes the frames | found on its default path, or set `CHROME` to a binary you already have, for example the Chromium Playwright downloads |
 | ffmpeg and ffprobe | join the parts, add audio, check the output | `ffmpeg -version` |
 | Python 3, optional | the skills' helper scripts | `python --version` |
 | Blender 4.2 or newer, optional | the main 3D path of `motlab-assets` (FBX, baked textures, Cycles stills) | `blender --version` |
@@ -26,6 +26,8 @@ Google Chrome on Debian or Ubuntu (x64), the command `motlab doctor` prints when
 ```bash
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo apt install -y ./google-chrome-stable_current_amd64.deb
 ```
+
+If Chrome is already on the machine another way, for example the Chromium Playwright downloads to `~/.cache/ms-playwright/`, set `CHROME` to that binary instead of installing Google's.
 
 The skill's scripts need numpy, scipy and Pillow. From the engine folder (`motlab --help` prints it; `motlab doctor` prints this command with the full path when they are missing):
 
@@ -176,5 +178,5 @@ Windows
 
 macOS and Linux
 
-- The code has the macOS and Linux Chrome paths and uses ANGLE on Metal on macOS. On Linux, CI runs the tests and their end-to-end renders on an Ubuntu runner with Google Chrome and the distribution's ffmpeg; no real video and no install with `install.js` or npm have been tried there, and macOS has not been tested at all. Reports are welcome.
-- A machine without a GPU should still render through Chrome's software drawing and software H.264 encoder, only slower. On the Windows test laptop with Chrome drawing on SwiftShader, the benchmark scene took 2.8 times as long at 1080p and 4.5 times at 4K ([rendering](rendering.md#without-a-gpu)). A machine with no GPU at all has not been tested.
+- The code has the macOS and Linux Chrome paths and uses ANGLE on Metal on macOS. On Linux, CI runs the tests and their end-to-end renders on an Ubuntu runner with Google Chrome and the distribution's ffmpeg. A real video has been made there now: a 42 s, 1080x1920 project on Ubuntu 24.04 with no GPU, rendered in about 82 s with the Chromium Playwright downloads (`CHROME` set to `~/.cache/ms-playwright/chromium-1248/chrome-linux64/chrome`), and an install from a clone with `install.js` worked too (issue #8). An install from npm on Linux has not been tried, and macOS has not been tested at all. Reports are welcome.
+- A machine without a GPU renders through Chrome's software drawing and software H.264 encoder, only slower: the Linux render above took about 82 s for 42 s of video at 1080x1920, and on the Windows test laptop with Chrome drawing on SwiftShader, the benchmark scene took 2.8 times as long at 1080p and 4.5 times at 4K ([rendering](rendering.md#without-a-gpu)).
