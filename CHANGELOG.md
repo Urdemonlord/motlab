@@ -6,7 +6,7 @@ Changes are listed by release, newest first. The sections dated before 0.1.0 rec
 
 ### Changed
 
-- The install docs now say a Chromium you already have works: set `CHROME` to it, for example the Chromium Playwright downloads, instead of installing Google Chrome. The README and the agent install docs also record that a real video has now been rendered on Linux: a 42 s, 1080x1920 project on Ubuntu 24.04 with no GPU in about 82 s (issue #8). An install from npm on Linux and anything on macOS are still untested.
+- The install docs now say a Chromium you already have works: set `CHROME` to it, for example the Chromium Playwright downloads, instead of installing Google Chrome. The README, the install docs and the roadmap also record that a real video has now been rendered on Linux: a 42 s, 1080x1920 project on Ubuntu 24.04 with no GPU in about 82 s (issue #8). An install from the npm registry on Linux and anything on macOS are still untested.
 
 ## 0.3.0 (2026-11-18)
 

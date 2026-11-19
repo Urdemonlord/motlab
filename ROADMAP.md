@@ -16,9 +16,9 @@ What is not built, what has not been tested, and ideas that came up while using 
 
 - The benchmark against Remotion and HyperFrames on macOS and Linux, with their own downloaded browsers, and on scenes heavy on text, images or footage. It was one scene on Windows, at 1080p and 4K.
 - The npm package on macOS. It was installed on Windows, from the registry and with nvm for Windows 2.0 (where setup writes its own launcher), and on a Linux VPS from a packed tarball (docs/install.md).
-- macOS, and Linux beyond the tests, including `motlab update` there. On Linux, CI renders the end-to-end tests on an Ubuntu runner; no real video has been made there. On macOS the Chrome paths and the Metal flag are in the code, but nothing has run.
+- macOS, and Linux beyond the tests, including `motlab update` there. On Linux, CI renders the end-to-end tests on an Ubuntu runner, and a real video has been made there now: a 42 s, 1080x1920 project on Ubuntu 24.04 with no GPU, in about 82 s (issue #8). On macOS the Chrome paths and the Metal flag are in the code, but nothing has run.
 - Renders longer than 10 minutes, and a 10-minute render on a machine that is doing nothing else.
-- A machine without a GPU beyond the tests. CI runs the end-to-end tests on Linux and Windows runners without a GPU, and the benchmark ran with Chrome drawing on SwiftShader on the test laptop (1080p and 4K, in `docs/rendering.md`), but no real video has been rendered on such a machine, and no 3D (WebGL) scene.
+- A machine without a GPU beyond the tests. CI runs the end-to-end tests on Linux and Windows runners without a GPU, and the benchmark ran with Chrome drawing on SwiftShader on the test laptop (1080p and 4K, in `docs/rendering.md`). A real video has been rendered on such a machine now: a 42 s, 1080x1920 project on Ubuntu 24.04 with no GPU, in about 82 s (issue #8). No 3D (WebGL) scene has been rendered on one yet.
 - Footage filmed on a phone (variable frame rate and HEVC were tested with files made by ffmpeg), and HEVC on a Chrome that cannot decode it.
 - Scene transitions between scenes of different sizes in the viewer, and in a normal Chrome window. The render refuses scenes of different sizes.
 - The cut voice from `cut_pauses.py` on a real person's take. The whole-take test used Windows text to speech.
@@ -31,7 +31,7 @@ What is not built, what has not been tested, and ideas that came up while using 
 - Notes on a real touch screen. Touch was emulated in Chrome over the DevTools protocol. Moving and resizing a box was tried with the mouse only.
 - The viewer on a real phone. The phone layout, its menus and notes drawn with touch were checked in Chrome with a phone emulated over the DevTools protocol, at 390 and 360 px upright and 844 and 740 px sideways. On an iPhone, Safari allows full screen for video elements only, so the viewer has no full screen there.
 - The viewer's full screen outside Chrome on Windows.
-- The skills in agents other than Claude Code. The installer was run with `--dry-run` for every target, and the folders come from each agent's docs, but no other agent has loaded the skills or made a video with them yet. That includes Muse Code and Hermes Agent, added from their docs in November 2026.
+- The skills in agents other than Claude Code. The installer was run with `--dry-run` for every target, and the folders come from each agent's docs. Muse has loaded the skills and made a real video with them (a 42 s project on Ubuntu 24.04 with no GPU, issue #8); no other agent has yet. That includes Muse Code and Hermes Agent, added from their docs in November 2026.
 
 ## Questions about speed
 
